@@ -17,10 +17,10 @@ body {
   justify-content: center; /* center vertically */
 }
 
-.center {
-  display: block;
-
-}
+img {
+      display: block;
+      margin: 0 auto;
+    }
 
 
 .button-container {
