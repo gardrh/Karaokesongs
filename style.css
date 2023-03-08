@@ -1,0 +1,53 @@
+
+/*Typography*/
+html {font: 16px 'Avenir', 'Open sans', Verdana, sans-serif;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.3em;}
+h3 {font-size: 1.75em;}
+h4 {font-size: 1.5em;}
+p {font-size: 1.25em;}
+
+/*layout*/
+
+body {
+  text-align: center; /* center text */
+  margin: auto; /* center horizontally */
+  display: flex; /* center vertically */
+  flex-direction: column; /* center vertically */
+  justify-content: center; /* center vertically */
+}
+
+
+
+.button-container {
+  text-align: center; /* center buttons horizontally */
+}
+
+
+#back-button {
+
+			background-color: #ADEFD1FF;
+			color: #00203FFF;
+			font-weight: bold;
+			padding-top: 1px ;
+			padding-bottom: 1px;
+			height: 140px;
+			width: 140px;
+			border: none;
+			border-radius: 100%;
+			cursor: pointer;
+			transition: transform 0.2s ease-in-out; /* add transition effect */
+			font-size: 1.7em;
+			font-color: orange;
+			margin-bottom: 1em;
+		}
+
+
+
+#back-button:hover {
+  background-color: #ADEFD1FF; /* Darker green on hover */
+}
+
+		#back-button:active {
+  transform: translateY(37px); /* move button down on press */
+			
