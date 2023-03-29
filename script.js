@@ -29,6 +29,3 @@ generateBtn.addEventListener("click", () => {
 			resultElement.innerHTML = "The CSV file has " + rowCount + " rows.";
 		};
 		request.send();
-
-
-
