@@ -48,7 +48,20 @@ img {
 			font-size: 1em;
 			margin-top: 0.2em;
 			padding: 0.5em;
-			background-color: #87F1F5;
+			background-color: ##generate-btn:active {
+  transform: rotate(360deg);;
+  /* move button down on press */
+}
+
+/* Style the result div */
+.result {
+  font-size: 1.2em;
+  margin-top: 0.2em;
+  padding: 0.5em;
+  background-color: #30E3DF;
+  border-radius: 2px;
+}
+;
 			border-radius: 2px;
 		}
 	
