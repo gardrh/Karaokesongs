@@ -67,6 +67,28 @@
 	<h2> PRESS AGAIN TO RETRY!</H1>
 	<p> RULE THE KARAOKESTAGE! <p>
 	
+	<body>
+	<h1>How many karaokesongs are in the databse??</h1>
+	<p id="result">Loading...</p>
+
+	<script>
+		// Load the CSV file
+		var request = new XMLHttpRequest();
+		request.open("GET", "data.csv", true);
+		request.onload = function() {
+			// Parse the CSV data
+			var csvData = request.responseText;
+			var csvRows = csvData.split("\n");
+			var rowCount = csvRows.length;
+
+			// Update the HTML element with the row count
+			var resultElement = document.getElementById("result");
+			resultElement.innerHTML = "There are " + rowCount + " songs in the database!";
+		};
+		request.send();
+	</script>
+</body>
+	
 	
 </body>
 
