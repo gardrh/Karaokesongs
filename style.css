@@ -9,7 +9,7 @@ body {
   padding: 0;
   font-size: 16px;
   font-family: 'Helvetica Neue', 'Open Sans', Verdana, sans-serif;
-  color: #000;
+  color: #FF8C00;
 }
 
 header {
@@ -56,8 +56,8 @@ button {
   font-size: 1.25rem;
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: #DFFFD8;
-  color: #F7C8E0;
+  background-color: #FF8C00;
+  color: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
