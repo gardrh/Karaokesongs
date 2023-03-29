@@ -22,6 +22,37 @@ img {
       margin: 0 auto;
     }
 
+		#generate-btn {
+			background-color: #EA047E;
+			color: #FCE700;
+			font-weight: bold;
+			padding-top: 1px ;
+			padding-bottom: 1px;
+			height: 170px;
+			width: 170px;
+			border: none;
+			border-radius: 100%;
+			cursor: pointer;
+			transition: transform 0.2s ease-in-out; /* add transition effect */
+			font-size: 1.7em;
+			font-color: orange;
+			margin-bottom: 1em;
+		}
+		
+		#generate-btn:active {
+  transform: translateY(20px); /* move button down on press */
+}
+
+		/* Style the result div */
+		.result {
+			font-size: 1em;
+			margin-top: 0.2em;
+			padding: 0.5em;
+			background-color: #87F1F5;
+			border-radius: 2px;
+		}
+	
+
 
 .button-container {
   text-align: center; /* center buttons horizontally */
