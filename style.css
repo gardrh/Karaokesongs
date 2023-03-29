@@ -1,37 +1,31 @@
+/* Default styles for all screen sizes */
+body {
+  background-color: #B4E4FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', 'Open Sans', Verdana, sans-serif;
+  color: #000;
+}
+
+header {
+  text-align: center;
+}
+
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-}
-
-p {
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #B4E4FF; /* light blue color */
-}
-
-.result {
-  font-size: 1.25rem;
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: #FF8C00; /* orange color */
-  color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .button-container {
@@ -41,17 +35,77 @@ body {
   margin-top: 2rem;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+button {
+  background-color: #F7C8E0;
+  color: #ffffff;
+  font-weight: bold;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  height: 170px;
+  width: 170px;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  font-size: 1.7em;
+  font-color: orange;
+  margin-bottom: 1em;
 }
 
-#generate-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 15px rgba(234, 4, 126, 0.3);
+.result {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #DFFFD8;
+  color: #F7C8E0;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-#generate-btn:active {
-  transform: translateY(0);
+/* Styles for screen sizes up to 768px */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    height: 120px;
+    width: 120px;
+    font-size: 1.5em;
+  }
+  
+  .result {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Styles for screen sizes up to 480px */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    height: 100px;
+    width: 100px;
+    font-size: 1.2em;
+  }
+  
+  .result {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }
