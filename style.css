@@ -62,7 +62,7 @@ max-width: 100%;
 
 #generate-btn {
 background-color: #DFFFD8;
-color: #fff;
+color: #F7C8E0;
 font-weight: 700;
 padding: 1.5rem 3rem;
 border: none;
@@ -88,6 +88,7 @@ font-size: 1.25rem;
 margin-top: 2rem;
 padding: 1.5rem;
 background-color: #DFFFD8;
+color: #F7C8E0;
 border-radius: 10px;
 box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
