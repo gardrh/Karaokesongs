@@ -24,10 +24,17 @@
       font-color: orange;
       margin-bottom: 1em;
     }
+  </style>
+  <style>
+    /* Style the typography */
+    html {
+      font: 16px 'Helvetica Neue', 'Open Sans', Verdana, sans-serif;
+      color: #FF8C00; /* orange color */
+    }
 	  
-</style>
+ </style>
 </head>
-<body style="background-color:#B4E4FF;">
+<body>
   <header>
     <h1>WHICH KARAOKE SONG SHOULD I SING?</h1>
   </header>
@@ -38,33 +45,14 @@
     <div class="result"></div>
     <div class="button-container"></div>
 	  <h2>PRESS AGAIN TO RETRY!</h2>
-
   </main>
   <section>
-  </section>
-  <body>
     <h1>How many karaoke songs are in the database?</h1>
     <p id="result">Loading...</p>
-  </body>
-  <body>
+  </section>
+  <footer>
     <p>RULE THE KARAOKE STAGE!</p>
-  </body>
-  <script src="script.js"></script>
-  <script>
-    // Load the CSV file
-    var request = new XMLHttpRequest();
-    request.open("GET", "data.csv", true);
-    request.onload = function() {
-      // Parse the CSV data
-      var csvData = request.responseText;
-      var csvRows = csvData.split("\n");
-      var rowCount = csvRows.length;
+  </footer>
+  <script src="script.js"></
 
-      // Update the HTML element with the row count
-      var resultElement = document.getElementById("result");
-      resultElement.innerHTML = "There are " + rowCount + " songs in the database!";
-    };
-    request.send();
-  </script>
-</body>
-</html>
+
