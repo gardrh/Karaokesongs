@@ -26,6 +26,6 @@ generateBtn.addEventListener("click", () => {
 
 			// Update the HTML element with the row count
 			var resultElement = document.getElementById("result");
-			resultElement.innerHTML = "The CSV file has " + rowCount + " rows.";
+			resultElement.innerHTML = "There are " + rowCount + " songs in the databse!.";
 		};
 		request.send();
