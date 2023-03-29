@@ -1,80 +1,57 @@
-body {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background-color: #FFC107; /* change the background color to a bright yellow /
-font-family: 'Comic Sans MS', cursive, sans-serif; / change the font family to a playful one */
-}
-
-/* update the color of the text to contrast with the new background */
-/Typography/
-html {
-font: 16px 'Helvetica Neue', 'Open Sans', Verdana, sans-serif;
-color: #333;
-}
-
-h1, h2, h3, h4 {
-color: #FFF; /* change the color of the headings to white */
-}
-
 h1 {
-font-size: 4rem; /* increase the font size of the main heading */
-margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 h2 {
-font-size: 2.5rem; /* increase the font size of the subheading */
-margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 p {
-font-size: 1.5rem; /* increase the font size of the paragraphs */
-line-height: 1.5;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
-#generate-btn {
-background-color: #FF5722; /* change the button color to a bright orange /
-color: #FFF; / change the text color to white */
-font-weight: 700;
-padding: 1.5rem 3rem;
-border: none;
-border-radius: 50px;
-cursor: pointer;
-transition: all 0.3s ease;
-font-size: 1.5rem;
-margin-bottom: 2rem;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #B4E4FF; /* light blue color */
 }
 
-#generate-btn:hover {
-transform: translateY(-5px);
-box-shadow: 0px 10px 15px rgba(255, 87, 34, 0.3); /* update the box shadow color */
-}
-
-/* add some animation to the result div /
 .result {
-font-size: 1.5rem;
-margin-top: 2rem;
-padding: 1.5rem;
-background-color: #FFF; / change the background color of the result div to white /
-color: #FFC107; / change the text color to the bright yellow /
-border-radius: 10px;
-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-animation: bounce 1s ease-in-out alternate infinite; / add a bouncing animation */
-}
-
-@keyframes bounce {
-0% {
-transform: translateY(0);
-}
-100% {
-transform: translateY(-10px);
-}
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #FF8C00; /* orange color */
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .button-container {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#generate-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(234, 4, 126, 0.3);
+}
+
+#generate-btn:active {
+  transform: translateY(0);
 }
