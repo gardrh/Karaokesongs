@@ -1,16 +1,24 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /Typography/
 html {
 font: 16px 'Montserrat', 'Open Sans', Verdana, sans-serif;
 }
 
 h1 {
-font-size: 3.5rem;
+font-size: 2rem;
 font-weight: 700;
 margin-bottom: 2rem;
 }
 
 h2 {
-font-size: 2rem;
+font-size: 1.8rem;
 font-weight: 700;
 margin-bottom: 1.5rem;
 }
