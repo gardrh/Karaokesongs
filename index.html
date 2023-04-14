@@ -10,7 +10,7 @@
 	<div class="container">
 		<h1>SingPin!</h1>
 		
-		<p>SingPin! is the ultimate Karaokesong-generator in the world. 
+		<p>SingPin! is the ultimate Karaoke song-generator in the world. 
 			Select a genre, click a button and find out what song you should sing next!</p>
 		
 		<h2>Select the type of song you want to sing:</h2>
@@ -33,7 +33,36 @@
 	<button class="select-btn" onclick="selectSong()">SING!</button>
 		<div id="song-result"></div>
 	</div>
+	
+	<div class="container">
+		<h2> What is this website? </h2>
+		<p> This website helps you select which karaoke song you should sing </p>
+		<h2> How many songs are in the database?</h2>
+		
+		<p id="result">Loading...</p>
+
+	<script>
+		// Load the CSV file
+		var request = new XMLHttpRequest();
+		request.open("GET", "data.csv", true);
+		request.onload = function() {
+			// Parse the CSV data
+			var csvData = request.responseText;
+			var csvRows = csvData.split("\n");
+			var rowCount = csvRows.length;
+
+			// Update the HTML element with the row count
+			var resultElement = document.getElementById("result");
+			resultElement.innerHTML = "There are " + rowCount + " songs in the database!";
+		};
+		request.send();
+	</script>
+	</div>
+
+
 
 	<script src="script.js"></script>
+	
+	
 </body>
 </html>
