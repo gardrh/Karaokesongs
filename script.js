@@ -37,11 +37,11 @@ genreBtns.forEach((btn) => {
 selectSongBtn.addEventListener('click', selectSong);
 
 function selectSong() {
-  const selectedType = document.querySelector('.genre-btn.active').dataset.Type;
+  const selectedType = document.querySelector('.genre-btn.active').textContent;
 
   let filteredData = data;
 
-  if (selectedType) {
+  if (selectedType !== 'All') {
     filteredData = data.filter((song) => song.Type === selectedType);
   }
 
