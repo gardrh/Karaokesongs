@@ -42,7 +42,7 @@ function selectSong() {
   let filteredData = data;
 
   if (selectedType !== 'All') {
-    filteredData = data.filter((song) => song.Type === selectedType);
+    filteredData = data.filter((song) => song.Type.includes(selectedType));
   }
 
   const randomIndex = Math.floor(Math.random() * filteredData.length);
