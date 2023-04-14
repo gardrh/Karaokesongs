@@ -15,7 +15,7 @@ genreBtns.forEach((btn) => {
 selectSongBtn.addEventListener('click', selectSong);
 
 function selectSong() {
-	const selectedType = document.querySelector('.genre-btn.active').dataset.type;
+	const selectedType = document.querySelector('.genre-btn.active').dataset.Type;
 	let filteredData = data;
 
 	if (selectedType) {
