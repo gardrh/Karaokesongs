@@ -103,7 +103,7 @@ button:focus {
 }
 
 .select-btn:hover {
-  background-color: #005b99;
+  background-color: #23923d;
 }
 
 @media screen and (min-width: 768px) {
@@ -112,7 +112,7 @@ button:focus {
     padding: 30px;
 	  margin-bottom: 40px;
   }
-	 header {
+	 .header {
     height: 150px;
     margin-top: 20px;
   }
