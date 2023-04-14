@@ -9,13 +9,15 @@ genreBtns.forEach((btn) => {
 		
 		// Add active class to the clicked button
 		btn.classList.add('active');
+
+		selectSong();
 	});
 });
 
 selectSongBtn.addEventListener('click', selectSong);
 
 function selectSong() {
-	const selectedType = document.querySelector('.genre-btn.active').dataset.Type;
+	const selectedType = document.querySelector('.genre-btn.active').dataset.type;
 	let filteredData = data;
 
 	if (selectedType) {
