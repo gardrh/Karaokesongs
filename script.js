@@ -15,11 +15,11 @@ genreBtns.forEach((btn) => {
 selectSongBtn.addEventListener('click', selectSong);
 
 function selectSong() {
-	const selectedGenre = document.querySelector('.genre-btn.active').dataset.genre;
+	const selectedType = document.querySelector('.genre-btn.active').dataset.type;
 	let filteredData = data;
 
-	if (selectedGenre) {
-		filteredData = data.filter((song) => song.Genre === selectedGenre);
+	if (selectedType) {
+		filteredData = data.filter((song) => song.Type === selectedType);
 	}
 
 	const randomIndex = Math.floor(Math.random() * filteredData.length);
@@ -40,8 +40,7 @@ fetch('data.csv')
 			data.push({
 				Song: row[0],
 				Artist: row[1],
-				Genre: row[2],
+				Type: row[2],
 			});
 		}
 	});
- 
