@@ -116,6 +116,9 @@ button:focus {
     height: 150px;
     margin-top: 20px;
   }
+	 #song-result {
+    font-size: 24px;
+  }
 
   /* Button styles */
   .genre-btn {
