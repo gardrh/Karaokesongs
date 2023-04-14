@@ -48,5 +48,5 @@ function selectSong() {
   const randomIndex = Math.floor(Math.random() * filteredData.length);
   const randomSong = filteredData[randomIndex];
 
-  songResult.innerHTML = `You should sing: ${randomSong.Artist} by ${randomSong.Title}`;
+  songResult.innerHTML = `You should sing: <b>${randomSong.Artist}</b> by <b>${randomSong.Title}`</b>;
 }
