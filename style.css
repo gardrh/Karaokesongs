@@ -93,6 +93,7 @@ button:focus {
   /* General styles */
   .container {
     padding: 30px;
+	  margin-bottom: 40px;
   }
 
   /* Button styles */
