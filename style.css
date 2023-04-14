@@ -16,11 +16,18 @@ body {
   margin-top: 30px;
 }
 
-.svg-container {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
+
+header img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
 
 
 h1 {
