@@ -2,6 +2,26 @@ const selectSongBtn = document.getElementById('select-song-btn');
 const songResult = document.getElementById('song-result');
 const genreBtns = document.querySelectorAll('.genre-btn');
 
+let data = [];
+
+fetch('data.csv')
+  .then((response) => response.text())
+  .then((csv) => {
+    const rows = csv.trim().split('\n');
+
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i].split(',');
+      data.push({
+        Song: row[0],
+        Artist: row[1],
+        Type: row[2],
+      });
+    }
+
+    // Call selectSong() to display a random song on page load
+    selectSong();
+  });
+
 genreBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     // Remove active class from all buttons
@@ -18,10 +38,11 @@ selectSongBtn.addEventListener('click', selectSong);
 
 function selectSong() {
   const selectedType = document.querySelector('.genre-btn.active').dataset.Type;
+
   let filteredData = data;
 
   if (selectedType) {
-    filteredData = data.filter((song) => song.Type === selectedType && selectedType === 'Rock!');
+    filteredData = data.filter((song) => song.Type === selectedType);
   }
 
   const randomIndex = Math.floor(Math.random() * filteredData.length);
@@ -29,20 +50,3 @@ function selectSong() {
 
   songResult.innerHTML = `You should sing: ${randomSong.Song} by ${randomSong.Artist}`;
 }
-
-let data = [];
-
-fetch('data.csv')
-  .then((response) => response.text())
-  .then((csv) => {
-    const rows = csv.trim().split('\n');
-
-    for (let i = 1; i < rows.length; i++) {
-      const row = rows[i].split(',');
-      data.push({
-        Song: row[0],
-        Artist: row[1],
-        Type: row[2],
-      });
-    }
-  });
