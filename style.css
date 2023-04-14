@@ -1,7 +1,7 @@
 /* General styles */
 body {
   font-family: Quicksand, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #0A0A0A;
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  background-color: #fff;
+  background-color: #b18afa;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,7 +57,7 @@ button:focus {
   font-size: 18px;
   font-weight: bold;
   color: white;
-  background-color: #6c757d;
+  background-color: #bfffad;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -66,7 +66,7 @@ button:focus {
 }
 
 .genre-btn.active {
-  background-color: #0077cc;
+  background-color: #caecfa;
   color: #fff;
 }
 
@@ -77,7 +77,7 @@ button:focus {
   font-size: 18px;
   font-weight: bold;
   color: white;
-  background-color: #28a745;
+  background-color: #bfffad;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -86,7 +86,7 @@ button:focus {
 }
 
 .select-btn:hover {
-  background-color: #005b99;
+  background-color: #caecfa;
 }
 
 @media screen and (min-width: 768px) {
