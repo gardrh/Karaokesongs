@@ -12,8 +12,8 @@ fetch('data.csv')
     for (let i = 1; i < rows.length; i++) {
       const row = rows[i].split(',');
       data.push({
-        Song: row[0],
-        Artist: row[1],
+        Artist: row[0],
+        Title: row[1],
         Type: row[2],
       });
     }
@@ -37,7 +37,7 @@ genreBtns.forEach((btn) => {
 selectSongBtn.addEventListener('click', selectSong);
 
 function selectSong() {
-  const selectedType = document.querySelector('.genre-btn.active').dataset.Type;
+  const selectedType = document.querySelector('.genre-btn.active').dataset.type;
 
   let filteredData = data;
 
@@ -48,5 +48,5 @@ function selectSong() {
   const randomIndex = Math.floor(Math.random() * filteredData.length);
   const randomSong = filteredData[randomIndex];
 
-  songResult.innerHTML = `You should sing: ${randomSong.Song} by ${randomSong.Artist}`;
+  songResult.innerHTML = `You should sing: ${randomSong.Title} by ${randomSong.Artist}`;
 }
