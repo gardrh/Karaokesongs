@@ -124,8 +124,8 @@ button:focus {
     height: 40px;
   }
  
-  #song-result {
-	font-size: 30px;
+  .song-result {
+	font-size: 25px;
 	margin-top: 20px;
 }
 
