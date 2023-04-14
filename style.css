@@ -110,12 +110,18 @@ button:focus {
 	margin-top: 20px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   /* General styles */
   .container {
     padding: 30px;
 	  margin-bottom: 40px;
   }
+	
+  #song-result {
+	font-size: 25px;
+	margin-top: 20px;
+}
+	
 	 .header {
     height: 150px;
     margin-top: 20px;
@@ -129,11 +135,6 @@ button:focus {
     height: 40px;
   }
  
-  #song-result {
-	font-size: 25px;
-	margin-top: 20px;
-}
-
 
   .select-btn {
     padding: 10px 20px;
