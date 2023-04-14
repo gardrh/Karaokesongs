@@ -101,6 +101,12 @@ button:focus {
     width: 120px;
     height: 40px;
   }
+ 
+  #song-result {
+	font-size: 32px;
+	margin-top: 20px;
+}
+
 
   .select-btn {
     padding: 10px 20px;
