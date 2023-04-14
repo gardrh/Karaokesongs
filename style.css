@@ -112,6 +112,10 @@ button:focus {
     padding: 30px;
 	  margin-bottom: 40px;
   }
+	 header {
+    height: 150px;
+    margin-top: 20px;
+  }
 
   /* Button styles */
   .genre-btn {
