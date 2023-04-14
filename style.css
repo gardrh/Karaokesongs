@@ -1,78 +1,60 @@
+/* General styles */
 body {
-	font-family: Arial, sans-serif;
-	background-color: #f5f5f5;
+  font-family: Quicksand, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 30px;
-	background-color: #fff;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-	margin: 30px;
-
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-	font-size: 36px;
-	text-align: center;
-	margin-top: 0;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 0;
 }
+
 h2 {
-	font-size: 30px;
-	text-align: center;
-	margin-top: 0;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0;
 }
 
 p {
-	font-size: 18px;
-	margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-select, button {
-	display: block;
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 20px;
-	font-size: 18px;
-	border-radius: 5px;
-	border: none;
-	background-color: #eee;
-}
-
-select:focus, button:focus {
-	outline: none;
-}
-
+/* Button styles */
+select,
 button {
-	background-color: #4CAF50;
-	color: #fff;
-	font-weight: bold;
-	cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #eee;
 }
 
-#song-result {
-	font-size: 24px;
-	margin-top: 20px;
-}
-
-.container {
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 20px;
-	text-align: center;
-}
-
-.btn-group {
-	margin-bottom: 20px;
+select:focus,
+button:focus {
+  outline: none;
 }
 
 .genre-btn {
   display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding: 5px 10px;
-  font-size: 14px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
   font-weight: bold;
   color: white;
   background-color: #6c757d;
@@ -80,19 +62,12 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  width: 120px;
-  height: 40px;
-}
-.genre-btn.active {
-	background-color: #0077cc;
-	color: #fff;
+  width: 200px;
 }
 
-@media (max-width: 768px) {
-  .genre-btn {
-    width: calc(50% - 10px);
-    height: 30px;
-  }
+.genre-btn.active {
+  background-color: #0077cc;
+  color: #fff;
 }
 
 .select-btn {
@@ -110,6 +85,27 @@ button {
   text-transform: uppercase;
 }
 
-#select-song-btn:hover {
-	background-color: #005b99;
+.select-btn:hover {
+  background-color: #005b99;
+}
+
+@media screen and (min-width: 768px) {
+  /* General styles */
+  .container {
+    padding: 30px;
+  }
+
+  /* Button styles */
+  .genre-btn {
+    margin: 10px;
+    width: 120px;
+    height: 40px;
+  }
+
+  .select-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }
