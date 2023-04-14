@@ -55,7 +55,7 @@ button {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 30px;
   border-radius: 5px;
   border: none;
   background-color: #eee;
@@ -127,7 +127,7 @@ button:focus {
   }
  
   #song-result {
-	font-size: 28px;
+	font-size: 30px;
 	margin-top: 20px;
 }
 
