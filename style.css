@@ -44,8 +44,8 @@ h2 {
 }
 
 p {
-  font-size: 25px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
 /* Button styles */
@@ -70,7 +70,7 @@ button:focus {
   display: inline-block;
   margin: 10px;
   padding: 10px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   background-color: #6c757d;
