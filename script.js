@@ -1,14 +1,25 @@
 const selectSongBtn = document.getElementById('select-song-btn');
 const songResult = document.getElementById('song-result');
-const genreFilter = document.getElementById('genre-filter');
+const genreBtns = document.querySelectorAll('.genre-btn');
+
+genreBtns.forEach((btn) => {
+	btn.addEventListener('click', () => {
+		// Remove active class from all buttons
+		genreBtns.forEach((btn) => btn.classList.remove('active'));
+		
+		// Add active class to the clicked button
+		btn.classList.add('active');
+	});
+});
 
 selectSongBtn.addEventListener('click', selectSong);
 
 function selectSong() {
+	const selectedGenre = document.querySelector('.genre-btn.active').dataset.genre;
 	let filteredData = data;
 
-	if (genreFilter.value) {
-		filteredData = data.filter((song) => song.Genre === genreFilter.value);
+	if (selectedGenre) {
+		filteredData = data.filter((song) => song.Genre === selectedGenre);
 	}
 
 	const randomIndex = Math.floor(Math.random() * filteredData.length);
@@ -25,5 +36,11 @@ fetch('data.csv')
 		const rows = csv.trim().split('\n');
 
 		for (let i = 1; i < rows.length; i++) {
-			const row = rows[i].
-
+			const row = rows[i].split(',');
+			data.push({
+				Song: row[0],
+				Artist: row[1],
+				Genre: row[2],
+			});
+		}
+	});
