@@ -105,6 +105,10 @@ button:focus {
   background-color: #23923d;
 }
 
+#song-result {
+	font-size: 30px;
+	margin-top: 20px;
+}
 
 @media screen and (min-width: 768px) {
   /* General styles */
