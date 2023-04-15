@@ -29,10 +29,24 @@
 
 		
 		<p>SingPin! is the ultimate karaoke song-generator in the world. 
-			Select a type, click the "SING!" button and find out what song you should sing next!</p>
+			Click "SING" to find your song!!</p>
 		
-		<h1>Select the type of song you want to sing:</h2>
-		<div class="btn-group">
+			<h2> Press the button! </h2>
+	<button class="select-btn" onclick="selectSong()">SING!</button>
+		
+		<div class="container">
+
+		<div id="song-result"></div>
+			<p>If you want to sing a special type of song, select a type by checking one of the boxes below!</p>
+	</div>
+		</div>
+		
+</body>
+
+<body>
+	<div class="container">
+		<h2> Select the type of song you wish to sing! </h2>
+			<div class="btn-group">
 			<button class="genre-btn" data-type="">All</button>
 			<button class="genre-btn" data-type="Happy!">Happy!</button>
 			<button class="genre-btn" data-type="Ballad!">Ballad!</button>
@@ -41,19 +55,7 @@
 			<button class="genre-btn" data-type="Duet!">Duet!</button>
 			<button class="genre-btn" data-type="Soulful!">Soulful!</button>
 		</div>
-		</div>
 		
-</body>
-
-<body>
-	<div class="container">
-		<h2> Press the button! </h2>
-	<button class="select-btn" onclick="selectSong()">SING!</button>
-		
-		<div class="container">
-
-		<div id="song-result"></div>
-	</div>
 		</div>
 
 	
