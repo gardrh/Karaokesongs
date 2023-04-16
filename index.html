@@ -87,7 +87,8 @@
 	
 		<h2> How many songs of each type are there?</h2>
 
-		<div id="chart"></div>
+<body>
+	<div id="chart"></div>
 	<script>
 		d3.csv("data.csv").then(function(data) {
 			var types = {};
@@ -148,7 +149,7 @@
 				.text(function(d) { return d[1]; });
 		});
 	</script>
-		
+</body>
 		
 	</div>
 
