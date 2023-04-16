@@ -147,8 +147,10 @@ button:focus {
 }
 
 
-#chart {
-  background-color: #fff;
-  border: 1px solid #ccc;
+#type-count {
+  font-size: 20px;
+  list-style: none;
 }
-
+#type-count li {
+  margin-bottom: 10px;
+}
