@@ -86,7 +86,42 @@
 	</script>
 	
 		<h2> How many songs of each type are there?</h2>
+	<ul id="type-count"></ul>
 
+	<script>
+		// Fetch the data from data.csv
+		fetch('data.csv')
+			.then(response => response.text())
+			.then(data => {
+				// Split the data into rows
+				const rows = data.trim().split('\n');
+
+				// Initialize an object to store the count for each type
+				const typeCount = {};
+
+				// Loop through each row and count the occurrences of each type
+				for (let i = 1; i < rows.length; i++) {
+					const cols = rows[i].split(',');
+					const type = cols[1].trim();
+
+					if (type in typeCount) {
+						typeCount[type]++;
+					} else {
+						typeCount[type] = 1;
+					}
+				}
+
+				// Loop through the type count object and add the results to the HTML
+				const typeCountList = document.getElementById('type-count');
+				for (let type in typeCount) {
+					const count = typeCount[type];
+					const listItem = document.createElement('li');
+					listItem.textContent = `${type}: ${count}`;
+					typeCountList.appendChild(listItem);
+				}
+			})
+			.catch(error => console.error(error));
+	</script>
 		
 	</div>
 
