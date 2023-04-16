@@ -102,7 +102,7 @@
 				// Loop through each row and count the occurrences of each type
 				for (let i = 1; i < rows.length; i++) {
 					const cols = rows[i].split(',');
-					const type = cols[1].trim();
+					const type = cols[2].trim();
 
 					if (type in typeCount) {
 						typeCount[type]++;
