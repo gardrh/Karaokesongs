@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	 <link rel="icon" type="image/png" href="favicon.png">
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
 </head>
 	
 <header>
@@ -82,6 +84,72 @@
 		};
 		request.send();
 	</script>
+	
+		<h2> How many songs of each type are there?</h2>
+
+		<div id="chart"></div>
+	<script>
+		d3.csv("data.csv").then(function(data) {
+			var types = {};
+			data.forEach(function(d) {
+				if (d.Type in types) {
+					types[d.Type] += 1;
+				} else {
+					types[d.Type] = 1;
+				}
+			});
+
+			var chart = d3.select("#chart");
+			var margin = {top: 20, right: 20, bottom: 30, left: 40};
+			var width = +chart.attr("width") - margin.left - margin.right;
+			var height = +chart.attr("height") - margin.top - margin.bottom;
+
+			var x = d3.scaleBand().rangeRound([0, width]).padding(0.1);
+			var y = d3.scaleLinear().rangeRound([height, 0]);
+
+			var g = chart.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			x.domain(Object.keys(types));
+			y.domain([0, d3.max(Object.values(types))]);
+
+			g.append("g")
+				.attr("class", "axis axis-x")
+				.attr("transform", "translate(0," + height + ")")
+				.call(d3.axisBottom(x));
+
+			g.append("g")
+				.attr("class", "axis axis-y")
+				.call(d3.axisLeft(y).ticks(10, "%"))
+				.append("text")
+				.attr("transform", "rotate(-90)")
+				.attr("y", 6)
+				.attr("dy", "0.71em")
+				.attr("text-anchor", "end")
+				.text("Number of Songs");
+
+			g.selectAll(".bar")
+				.data(Object.entries(types))
+				.enter().append("rect")
+				.attr("class", "bar")
+				.attr("x", function(d) { return x(d[0]); })
+				.attr("y", function(d) { return y(d[1]); })
+				.attr("width", x.bandwidth())
+				.attr("height", function(d) { return height - y(d[1]); })
+				.attr("fill", "steelblue");
+
+			g.selectAll(".text")
+				.data(Object.entries(types))
+				.enter().append("text")
+				.attr("class", "label")
+				.attr("x", function(d) { return x(d[0]) + x.bandwidth() / 2; })
+				.attr("y", function(d) { return y(d[1]) - 5; })
+				.attr("text-anchor", "middle")
+				.text(function(d) { return d[1]; });
+		});
+	</script>
+		
+		
 	</div>
 
 
