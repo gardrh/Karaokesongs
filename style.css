@@ -31,6 +31,20 @@ header img {
   max-width: 100%;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+footer img {
+  max-height: 100%;
+  max-width: 100%;
+}
 
 
 h1 {
@@ -144,4 +158,14 @@ button:focus {
     font-weight: bold;
     text-transform: uppercase;
   }
+}
+
+
+#type-count {
+  list-style: none;
+  font-size: 25px;
+}
+
+#type-count li {
+  margin-bottom: 10px;
 }
