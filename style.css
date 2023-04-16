@@ -148,9 +148,10 @@ button:focus {
 
 
 #type-count {
-  font-size: 20px;
   list-style: none;
+  font-size: 25px;
 }
+
 #type-count li {
   margin-bottom: 10px;
 }
