@@ -145,3 +145,10 @@ button:focus {
     text-transform: uppercase;
   }
 }
+
+
+#chart {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
