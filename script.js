@@ -50,5 +50,3 @@ function selectSong() {
 
   songResult.innerHTML = `You should sing: <b>${randomSong.Artist}</b> by <b>${randomSong.Title}</b>`;
 }
-
-
