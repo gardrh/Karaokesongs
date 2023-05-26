@@ -121,6 +121,11 @@ button:focus {
   background-color: #23923d;
 }
 
+.select-btn:active {
+  transform: translateY(4px);
+}
+
+
 #song-result {
 	font-size: 30px;
 	margin-top: 20px;
