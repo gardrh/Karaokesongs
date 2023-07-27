@@ -50,3 +50,7 @@ function selectSong() {
 
   songResult.innerHTML = `You should sing: <b>${randomSong.Artist}</b> by <i><b>${randomSong.Title}</b></i>`;
 }
+
+  // Announce the result to screen readers using ARIA live region
+  announceResult(songResult);
+}
