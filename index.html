@@ -65,34 +65,7 @@
 			<button class="genre-btn" data-type="Soulful!">Soulful!</button>
 		</div>
 		
-		
-<!-- Wrap the "SING!" button inside a div container with an id -->
-<div id="sing-container">
   <button id="sing-btn" class="select-btn" onclick="selectSong()">SING!</button>
-</div>
-
-<script>
-  // ... (existing JavaScript code) ...
-
-  genreBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons
-      genreBtns.forEach((btn) => btn.classList.remove('active'));
-
-      // Add active class to the clicked button
-      btn.classList.add('active');
-
-      // Scroll to the "SING!" button container
-      const singContainer = document.getElementById('sing-container');
-      singContainer.scrollIntoView({ behavior: 'smooth' });
-
-      selectSong();
-    });
-  });
-
-</script>
-
-
 		
 		<div class="container">
 
