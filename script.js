@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Scroll to the "SING!" button
       const singBtnPosition = singBtn.getBoundingClientRect().top;
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    const targetScrollPosition = currentScrollPosition + singBtnPosition - 20; // Subtract 20px for margin
+    const targetScrollPosition = currentScrollPosition + singBtnPosition - 35; // Subtract 35px for margin
       window.scrollTo({
         top: targetScrollPosition,
         behavior: 'smooth',
