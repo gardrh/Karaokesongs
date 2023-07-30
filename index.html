@@ -66,7 +66,26 @@
 		</div>
 		
 		
-			<button class="select-btn" onclick="selectSong()">SING!</button>
+		<button id="sing-btn" class="select-btn" onclick="selectSong()">SING!</button>
+						<script>
+				
+				 	 genreBtns.forEach((btn) => {
+				    btn.addEventListener('click', () => {
+				      // Remove active class from all buttons
+				      genreBtns.forEach((btn) => btn.classList.remove('active'));
+				
+				      // Add active class to the clicked button
+				      btn.classList.add('active');
+				
+				      // Scroll to the "SING!" button
+				      const singBtn = document.getElementById('sing-btn');
+				      singBtn.scrollIntoView({ behavior: 'smooth' });
+				
+				      selectSong();
+				    });
+				  });
+				
+				</script>
 		
 		<div class="container">
 
