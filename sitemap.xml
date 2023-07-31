@@ -9,32 +9,11 @@
   
   <!-- Privacy policy page -->
   <url>
-    <loc>https://singpin.app/privacy-policy</loc>
+    <loc>https://singpin.app/privacy-policy.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <!-- Feedback form page -->
-  <url>
-    <loc>https://singpin.app/feedback-form</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Song selection page -->
-  <url>
-    <loc>https://singpin.app/song-selection</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
   </url>
   
-  <!-- Data details page -->
-  <url>
-    <loc>https://singpin.app/data-details</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!-- Add more pages here as needed -->
   
 </urlset>
