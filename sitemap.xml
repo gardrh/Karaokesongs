@@ -13,6 +13,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+    <!-- About page -->
+  <url>
+    <loc>https://singpin.app/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   
   <!-- Add more pages here as needed -->
   
