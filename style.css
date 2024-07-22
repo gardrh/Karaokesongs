@@ -182,3 +182,29 @@ button:focus {
 #type-count li {
   margin-bottom: 10px;
 }
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navigation ul li a:hover {
+  background-color: #575757;
+}
