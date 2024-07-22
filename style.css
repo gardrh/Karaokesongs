@@ -198,7 +198,7 @@ button:focus {
 
 .navigation ul li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
