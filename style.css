@@ -1,21 +1,19 @@
 /* General styles */
 body {
-  font-family: Open-sans, sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
   margin: 0;
   padding: 0;
 }
 
 .container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 20px;
   text-align: center;
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
   border-radius: 10px;
-
 }
 
 header {
@@ -38,7 +36,6 @@ footer {
   height: 100px;
   margin-top: 30px;
   margin-bottom: 30px;
-
 }
 
 footer img {
@@ -46,30 +43,31 @@ footer img {
   max-width: 70%;
 }
 
-
 h1 {
   font-size: 35px;
   text-align: center;
   margin-top: 0;
+  color: #333; /* Dark gray heading color */
 }
 
 h2 {
   font-size: 30px;
   text-align: center;
   margin-top: 0;
+  color: #333; /* Dark gray heading color */
 }
+
 h3 {
   font-size: 26px;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-
+  margin: 10px 0;
+  color: #333; /* Dark gray heading color */
 }
-
 
 p {
   font-size: 22px;
   margin-bottom: 30px;
+  color: #555; /* Slightly lighter gray for body text */
 }
 
 /* Button styles */
@@ -83,11 +81,14 @@ button {
   border-radius: 5px;
   border: none;
   background-color: #eee;
+  appearance: none; /* Remove default select arrow */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 select:focus,
 button:focus {
   outline: none;
+  background-color: #ddd; /* Slightly darker on focus */
 }
 
 .genre-btn {
@@ -97,7 +98,7 @@ button:focus {
   font-size: 20px;
   font-weight: bold;
   color: white;
-  background-color: #6c757d;
+  background-color: #6c757d; /* Darker gray button */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -106,7 +107,7 @@ button:focus {
 }
 
 .genre-btn.active {
-  background-color: #0077cc;
+  background-color: #0077cc; /* Vibrant blue for active state */
   color: #fff;
 }
 
@@ -117,7 +118,7 @@ button:focus {
   font-size: 35px;
   font-weight: bold;
   color: white;
-  background-color: #3E7C41;
+  background-color: #3E7C41; /* Green button color */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -126,36 +127,36 @@ button:focus {
 }
 
 .select-btn:hover {
-  background-color: #23923d;
+  background-color: #23923d; /* Slightly darker green on hover */
 }
 
 .select-btn:active {
   transform: translateY(8px);
+  background-color: #28a745; /* Darker green on active state */
 }
 
-
 #song-result {
-	font-size: 30px;
-	margin-top: 20px;
+  font-size: 30px;
+  margin-top: 20px;
+  color: #333; /* Dark gray result color */
 }
 
 @media screen and (min-width: 767px) {
   /* General styles */
   .container {
     padding: 30px;
-	  margin-bottom: 40px;
+    margin-bottom: 40px;
   }
-	
+
   #song-result {
-	font-size: 25px;
-	margin-top: 20px;
-}
-	
-	 .header {
-    height: 150px;
+    font-size: 25px;
     margin-top: 20px;
   }
 
+  header {
+    height: 150px;
+    margin-top: 20px;
+  }
 
   /* Button styles */
   .genre-btn {
@@ -163,7 +164,6 @@ button:focus {
     width: 120px;
     height: 40px;
   }
- 
 
   .select-btn {
     padding: 10px 20px;
@@ -173,10 +173,10 @@ button:focus {
   }
 }
 
-
 #type-count {
   list-style: none;
   font-size: 25px;
+  padding: 0;
 }
 
 #type-count li {
@@ -203,9 +203,25 @@ button:focus {
   padding: 14px 20px;
   text-decoration: none;
   font-size: 22px;
-font-weight: bold;
+  font-weight: bold;
 }
 
 .navigation ul li a:hover {
-  background-color: #575757;
+  background-color: #575757; /* Darker gray on hover */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 95%; /* Allow for more width on smaller screens */
+  }
+
+  .genre-btn {
+    width: 100%; /* Buttons take full width on mobile */
+    margin-bottom: 10px;
+  }
+
+  .select-btn {
+    font-size: 25px; /* Adjust font size for better readability */
+  }
 }
