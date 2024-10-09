@@ -1,0 +1,211 @@
+/* General styles */
+body {
+  font-family: Open-sans, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  border-radius: 10px;
+
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 30px;
+}
+
+header img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+footer img {
+  max-height: 70%;
+  max-width: 70%;
+}
+
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0;
+}
+h3 {
+  font-size: 26px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+
+p {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+/* Button styles */
+select,
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #eee;
+}
+
+select:focus,
+button:focus {
+  outline: none;
+}
+
+.genre-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #6c757d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 200px;
+}
+
+.genre-btn.active {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+.select-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 20px 35px;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+  background-color: #3E7C41;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+.select-btn:hover {
+  background-color: #23923d;
+}
+
+.select-btn:active {
+  transform: translateY(8px);
+}
+
+
+#song-result {
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 767px) {
+  /* General styles */
+  .container {
+    padding: 30px;
+	  margin-bottom: 40px;
+  }
+	
+  #song-result {
+	font-size: 25px;
+	margin-top: 20px;
+}
+	
+	 .header {
+    height: 150px;
+    margin-top: 20px;
+  }
+
+
+  /* Button styles */
+  .genre-btn {
+    margin: 10px;
+    width: 120px;
+    height: 40px;
+  }
+ 
+
+  .select-btn {
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+
+#type-count {
+  list-style: none;
+  font-size: 25px;
+}
+
+#type-count li {
+  margin-bottom: 10px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 22px;
+font-weight: bold;
+}
+
+.navigation ul li a:hover {
+  background-color: #575757;
+}
