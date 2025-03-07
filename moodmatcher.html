@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mood Matcher - SingPin!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252708748504526"
+        crossorigin="anonymous"></script>
+
+    <meta name="google-adsense-account" content="ca-pub-9252708748504526">
+    <link rel="canonical" href="https://singpin.app/moodmatcher.html">
+</head>
+
+<body>
+    <header>
+        <img src="dinh.svg" alt="SingPin! Logo">
+    </header>
+
+    <div class="container">
+        <h1>Find a Karaoke Song Based on Your Mood!</h1>
+        <h2>Select Your Mood:</h2>
+        <div class="btn-group">
+            <button class="mood-btn" data-mood="Happy!">Happy</button>
+            <button class="mood-btn" data-mood="Sad!">Sad</button>
+            <button class="mood-btn" data-mood="Energetic!">Energetic</button>
+            <button class="mood-btn" data-mood="Relaxed!">Relaxed</button>
+        </div>
+
+        <button id="find-song" class="select-btn">Find My Song</button>
+
+        <div id="song-result" aria-live="assertive"></div>
+    </div>
+
+    <script>
+        document.getElementById("find-song").addEventListener("click", function () {
+            const selectedMood = document.querySelector(".mood-btn.active");
+            if (!selectedMood) {
+                alert("Please select a mood!");
+                return;
+            }
+            const mood = selectedMood.getAttribute("data-mood");
+            fetch("data.csv")
+                .then(response => response.text())
+                .then(data => {
+                    const rows = data.trim().split("\n").slice(1);
+                    const filteredSongs = rows.filter(row => row.includes(mood));
+                    if (filteredSongs.length === 0) {
+                        document.getElementById("song-result").innerText = "No songs found for this mood.";
+                        return;
+                    }
+                    const randomSong = filteredSongs[Math.floor(Math.random() * filteredSongs.length)];
+                    const songDetails = randomSong.split(",");
+                    document.getElementById("song-result").innerHTML = `<h2>${songDetails[0]}</h2><p>Artist: ${songDetails[1]}</p>`;
+                })
+                .catch(error => console.error("Error loading songs:", error));
+        });
+
+        document.querySelectorAll(".mood-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                document.querySelectorAll(".mood-btn").forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
