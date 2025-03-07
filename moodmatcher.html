@@ -2,18 +2,27 @@
 <html lang="en">
 
 <head>
-    <title>Mood Matcher - SingPin!</title>
+    <title>SingPin! Mood Matcher</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252708748504526"
-        crossorigin="anonymous"></script>
-
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e6fadd47-27cb-480f-b321-9b739264b209" type="text/javascript" async></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252708748504526" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-9252708748504526">
+
+    <meta name="description" content="Find the perfect karaoke song based on your mood! Let SingPin! Mood Matcher guide you to the best song for you.">
     <link rel="canonical" href="https://singpin.app/moodmatcher.html">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWRV1ZH9BE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZWRV1ZH9BE');
+    </script>
 </head>
 
 <body>
@@ -22,50 +31,69 @@
     </header>
 
     <div class="container">
-        <h1>Find a Karaoke Song Based on Your Mood!</h1>
-        <h2>Select Your Mood:</h2>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="moodmatcher.html">MoodMatcher</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Find Your Karaoke Song by Mood</h1>
+        <p>Select a mood and let SingPin! suggest the best song for you.</p>
+        
         <div class="btn-group">
-            <button class="mood-btn" data-mood="Happy!">Happy</button>
-            <button class="mood-btn" data-mood="Sad!">Sad</button>
-            <button class="mood-btn" data-mood="Energetic!">Energetic</button>
-            <button class="mood-btn" data-mood="Relaxed!">Relaxed</button>
+            <button class="mood-btn" data-mood="Happy">Happy</button>
+            <button class="mood-btn" data-mood="Sad">Sad</button>
+            <button class="mood-btn" data-mood="Energetic">Energetic</button>
+            <button class="mood-btn" data-mood="Romantic">Romantic</button>
+            <button class="mood-btn" data-mood="Chill">Chill</button>
         </div>
-
-        <button id="find-song" class="select-btn">Find My Song</button>
-
+        
+        <button id="find-song-btn" class="select-btn">Find My Song</button>
+        
         <div id="song-result" aria-live="assertive"></div>
     </div>
 
     <script>
-        document.getElementById("find-song").addEventListener("click", function () {
+        document.getElementById("find-song-btn").addEventListener("click", function() {
             const selectedMood = document.querySelector(".mood-btn.active");
             if (!selectedMood) {
-                alert("Please select a mood!");
+                alert("Please select a mood first!");
                 return;
             }
-            const mood = selectedMood.getAttribute("data-mood");
+
             fetch("data.csv")
                 .then(response => response.text())
                 .then(data => {
-                    const rows = data.trim().split("\n").slice(1);
-                    const filteredSongs = rows.filter(row => row.includes(mood));
-                    if (filteredSongs.length === 0) {
-                        document.getElementById("song-result").innerText = "No songs found for this mood.";
-                        return;
+                    const rows = data.trim().split("\n").map(row => row.split(","));
+                    const filteredSongs = rows.filter(row => row[2].trim() === selectedMood.dataset.mood);
+
+                    if (filteredSongs.length > 0) {
+                        const randomSong = filteredSongs[Math.floor(Math.random() * filteredSongs.length)];
+                        document.getElementById("song-result").innerHTML = `<h2>${randomSong[0]}</h2><p>by ${randomSong[1]}</p>`;
+                    } else {
+                        document.getElementById("song-result").innerHTML = "No songs found for this mood. Try another!";
                     }
-                    const randomSong = filteredSongs[Math.floor(Math.random() * filteredSongs.length)];
-                    const songDetails = randomSong.split(",");
-                    document.getElementById("song-result").innerHTML = `<h2>${songDetails[0]}</h2><p>Artist: ${songDetails[1]}</p>`;
                 })
-                .catch(error => console.error("Error loading songs:", error));
+                .catch(error => console.error("Error fetching songs:", error));
         });
 
         document.querySelectorAll(".mood-btn").forEach(button => {
-            button.addEventListener("click", function () {
+            button.addEventListener("click", function() {
                 document.querySelectorAll(".mood-btn").forEach(btn => btn.classList.remove("active"));
                 this.classList.add("active");
             });
         });
     </script>
+
+    <footer>
+        <img src="dinh.svg" alt="SingPin! Logo">
+    </footer>
 </body>
+
 </html>
