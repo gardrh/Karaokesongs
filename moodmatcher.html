@@ -1,3 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SingPin! Let your next karaoke song find you!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e6fadd47-27cb-480f-b321-9b739264b209" type="text/javascript" async></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252708748504526"
+        crossorigin="anonymous"></script>
+
+    <meta name="google-adsense-account" content="ca-pub-9252708748504526">
+
+    <meta name="description" content="This is a website that helps you find out what song you should sing at the next karaoke night (or morning)! Let your next karaoke song find you, and have fun! Sing karaoke today!">
+
+    <!-- Hotjar Tracking Code for https://www.singpin.app/ -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 3591001, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <link rel="canonical" href="https://singpin.app/">
+
+</head>
+
+<header>
+    <img src="dinh.svg" alt="Logo with the name SingPin!" href="https://www.instagram.com/singpin.app/">
+</header>
+
+<div class="container">
+    <nav class="navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="moodmatcher.html">MoodMatcher</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWRV1ZH9BE"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZWRV1ZH9BE');
+</script>
+
+<body>
+    <div class="container">
+        <h1>Find Your Perfect Karaoke Song!</h1>
+
+        <div id="quiz-container">
+            <h2>Answer these 5 questions:</h2>
+            <form id="quiz-form">
+                <div class="question">
+    <p>1. How do you feel today?</p>
+    <select name="q1">
+        <option value="Banger!">Super energetic!</option>
+        <option value="Happy!">Relaxed and happy</option>
+        <option value="Ballad!">A little sentimental</option>
+        <option value="Duet!">I need a duet partner!</option>
+        <option value="Soulful!">Deep and soulful</option>
+    </select>
+</div>
+
+<div class="question">
+    <p>2. What's your go-to karaoke strategy?</p>
+    <select name="q2">
+        <option value="Banger!">Hype up the crowd!</option>
+        <option value="Ballad!">Sing from the heart</option>
+        <option value="Happy!">Have fun and smile</option>
+        <option value="Duet!">Sing a legendary duet</option>
+        <option value="Soulful!">Show off my smooth vocals</option>
+    </select>
+</div>
+
+<div class="question">
+    <p>3. What’s your ideal Friday night?</p>
+    <select name="q3">
+        <option value="Banger!">Dancing at a party</option>
+        <option value="Ballad!">A cozy dinner with loved ones</option>
+        <option value="Happy!">Karaoke with friends!</option>
+        <option value="Duet!">A romantic evening</option>
+        <option value="Soulful!">Sipping wine and listening to jazz</option>
+    </select>
+</div>
+
+<div class="question">
+    <p>4. If you were a music genre, what would you be?</p>
+    <select name="q4">
+        <option value="Banger!">Pop or EDM</option>
+        <option value="Ballad!">Classic love songs</option>
+        <option value="Happy!">Upbeat and fun</option>
+        <option value="Duet!">Iconic duets</option>
+        <option value="Soulful!">Smooth R&B</option>
+    </select>
+</div>
+
+<div class="question">
+    <p>5. What's your biggest karaoke goal?</p>
+    <select name="q5">
+        <option value="Banger!">Get everyone dancing!</option>
+        <option value="Ballad!">Make them feel something deep</option>
+        <option value="Happy!">Spread joy and laughter</option>
+        <option value="Duet!">Harmonize perfectly</option>
+        <option value="Soulful!">Impress them with my voice</option>
+    </select>
+</div>
+
+                <button type="button" class="select-btn" id="find-song-btn">Find My Song</button>
+            </form>
+        </div>
+
+        <div id="song-result"></div>
+    </div>
+
+    <script>
 document.getElementById('find-song-btn').addEventListener('click', function () {
     // Initialize scores for each genre
     let scores = { 
@@ -68,3 +201,37 @@ document.getElementById('find-song-btn').addEventListener('click', function () {
             `;
         });
 });
+
+    </script>
+
+    <div class="container">
+        <h2>Social media</h2>
+        <p>
+            <a aria-label="Link to Instagram profile" href="https://www.instagram.com/singpin.app/" target="_blank">
+                <img src="2959748_instagram_photo_share_icon.png" alt="Instagram logo and link to account">
+            </a>
+        </p>
+        <h2>Friends</h2>
+        <a href="https://www.morningkaraoke.com/"> <img src="MK logo just text (1).svg" alt="Morning Karaoke Logo" width="300"> </a>
+    </div>
+
+    <div class="container">
+        <h2>Information</h2>
+
+        <p><a aria-label="Privacy policy" href="privacy-policy.html" rel="noopener noreferrer">Privacy policy</a></p>
+
+        <h2>About</h2>
+
+        <p><a aria-label="About" href="about.html" rel="noopener noreferrer">About</a></p>
+
+        <p><a aria-label="Contact" href="contact.html" rel="noopener noreferrer">Contact</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<footer>
+    <img src="dinh.svg" alt="Logo with the name SingPin!" href="https://www.instagram.com/singpin.app/">
+</footer>
+
+</html>
