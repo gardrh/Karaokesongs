@@ -69,59 +69,59 @@
             <h2>Answer these 5 questions:</h2>
             <form id="quiz-form">
                 <div class="question">
-                    <p>1. How do you feel today?</p>
-                    <select name="q1">
-                        <option value="banger">Super energetic!</option>
-                        <option value="happy">Relaxed and happy</option>
-                        <option value="ballad">A little sentimental</option>
-                        <option value="duet">I need a duet partner!</option>
-                        <option value="soulful">Deep and soulful</option>
-                    </select>
-                </div>
+    <p>1. How do you feel today?</p>
+    <select name="q1">
+        <option value="Banger!">Super energetic!</option>
+        <option value="Happy!">Relaxed and happy</option>
+        <option value="Ballad!">A little sentimental</option>
+        <option value="Duet!">I need a duet partner!</option>
+        <option value="Soulful!">Deep and soulful</option>
+    </select>
+</div>
 
-                <div class="question">
-                    <p>2. What's your go-to karaoke strategy?</p>
-                    <select name="q2">
-                        <option value="banger">Hype up the crowd!</option>
-                        <option value="ballad">Sing from the heart</option>
-                        <option value="happy">Have fun and smile</option>
-                        <option value="duet">Sing a legendary duet</option>
-                        <option value="soulful">Show off my smooth vocals</option>
-                    </select>
-                </div>
+<div class="question">
+    <p>2. What's your go-to karaoke strategy?</p>
+    <select name="q2">
+        <option value="Banger!">Hype up the crowd!</option>
+        <option value="Ballad!">Sing from the heart</option>
+        <option value="Happy!">Have fun and smile</option>
+        <option value="Duet!">Sing a legendary duet</option>
+        <option value="Soulful!">Show off my smooth vocals</option>
+    </select>
+</div>
 
-                <div class="question">
-                    <p>3. What’s your ideal Friday night?</p>
-                    <select name="q3">
-                        <option value="banger">Dancing at a party</option>
-                        <option value="ballad">A cozy dinner with loved ones</option>
-                        <option value="happy">Karaoke with friends!</option>
-                        <option value="duet">A romantic evening</option>
-                        <option value="soulful">Sipping wine and listening to jazz</option>
-                    </select>
-                </div>
+<div class="question">
+    <p>3. What’s your ideal Friday night?</p>
+    <select name="q3">
+        <option value="Banger!">Dancing at a party</option>
+        <option value="Ballad!">A cozy dinner with loved ones</option>
+        <option value="Happy!">Karaoke with friends!</option>
+        <option value="Duet!">A romantic evening</option>
+        <option value="Soulful!">Sipping wine and listening to jazz</option>
+    </select>
+</div>
 
-                <div class="question">
-                    <p>4. If you were a music genre, what would you be?</p>
-                    <select name="q4">
-                        <option value="banger">Pop or EDM</option>
-                        <option value="ballad">Classic love songs</option>
-                        <option value="happy">Upbeat and fun</option>
-                        <option value="duet">Iconic duets</option>
-                        <option value="soulful">Smooth R&B</option>
-                    </select>
-                </div>
+<div class="question">
+    <p>4. If you were a music genre, what would you be?</p>
+    <select name="q4">
+        <option value="Banger!">Pop or EDM</option>
+        <option value="Ballad!">Classic love songs</option>
+        <option value="Happy!">Upbeat and fun</option>
+        <option value="Duet!">Iconic duets</option>
+        <option value="Soulful!">Smooth R&B</option>
+    </select>
+</div>
 
-                <div class="question">
-                    <p>5. What's your biggest karaoke goal?</p>
-                    <select name="q5">
-                        <option value="banger">Get everyone dancing!</option>
-                        <option value="ballad">Make them feel something deep</option>
-                        <option value="happy">Spread joy and laughter</option>
-                        <option value="duet">Harmonize perfectly</option>
-                        <option value="soulful">Impress them with my voice</option>
-                    </select>
-                </div>
+<div class="question">
+    <p>5. What's your biggest karaoke goal?</p>
+    <select name="q5">
+        <option value="Banger!">Get everyone dancing!</option>
+        <option value="Ballad!">Make them feel something deep</option>
+        <option value="Happy!">Spread joy and laughter</option>
+        <option value="Duet!">Harmonize perfectly</option>
+        <option value="Soulful!">Impress them with my voice</option>
+    </select>
+</div>
 
                 <button type="button" class="select-btn" id="find-song-btn">Find My Song</button>
             </form>
@@ -131,46 +131,75 @@
     </div>
 
     <script>
-        document.getElementById('find-song-btn').addEventListener('click', function () {
-            let scores = { banger: 0, happy: 0, ballad: 0, duet: 0, soulful: 0 };
-            let form = document.getElementById('quiz-form');
-            
-            // Ensure all questions are answered
-            let allAnswered = true;
-            for (let i = 1; i <= 5; i++) {
-                if (!form['q' + i].value) {
-                    allAnswered = false;
-                    alert("Please answer all questions!");
-                    break;
+      document.getElementById('find-song-btn').addEventListener('click', function () {
+    // Initialize scores for each genre
+    let scores = { 
+        "Banger!": 0, 
+        "Happy!": 0, 
+        "Ballad!": 0, 
+        "Duet!": 0, 
+        "Soulful!": 0 
+    };
+
+    // Get the form and ensure all questions are answered
+    let form = document.getElementById('quiz-form');
+    let allAnswered = true;
+
+    // Loop through each question and update scores
+    for (let i = 1; i <= 5; i++) {
+        let selectedOption = form['q' + i].value;
+        if (!selectedOption) {
+            allAnswered = false;
+            alert("Please answer all questions!");
+            return; // Exit if any question is unanswered
+        }
+        scores[selectedOption]++; // Increment the score for the selected genre
+    }
+
+    // Determine the genre with the highest score
+    let highestGenre = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+    // Fetch the CSV data and filter songs based on the highest genre
+    fetch('data.csv')
+        .then(response => response.text())
+        .then(csv => {
+            // Parse the CSV data
+            const rows = csv.trim().split('\n');
+            let filteredSongs = [];
+
+            // Loop through the rows and filter songs by the highest genre
+            for (let i = 1; i < rows.length; i++) {
+                let row = rows[i].split(',');
+                let songTitle = row[0].trim();
+                let songArtist = row[1].trim();
+                let songType = row[2].trim();
+
+                if (songType === highestGenre) {
+                    filteredSongs.push({ Artist: songArtist, Title: songTitle, Type: songType });
                 }
-                scores[form['q' + i].value]++;
             }
 
-            if (!allAnswered) return;
-
-            let highestCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-
-            fetch('data.csv')
-                .then(response => response.text())
-                .then(csv => {
-                    const rows = csv.trim().split('\n');
-                    let filteredSongs = [];
-                    for (let i = 1; i < rows.length; i++) {
-                        let row = rows[i].split(',');
-                        if (row[2].toLowerCase() === highestCategory) {
-                            filteredSongs.push({ Artist: row[0], Title: row[1], Type: row[2] });
-                        }
-                    }
-
-                    if (filteredSongs.length > 0) {
-                        let randomSong = filteredSongs[Math.floor(Math.random() * filteredSongs.length)];
-                        document.getElementById('song-result').innerHTML = `You should sing: <b>${randomSong.Artist}</b> - <i>${randomSong.Title}</i>!`;
-                    } else {
-                        // Fallback to default song from the highest-rated category
-                        document.getElementById('song-result').innerHTML = `No songs found for your mood. Try: <b>Default Song for ${highestCategory}</b>`;
-                    }
-                });
+            // If songs are found, randomly select one and display it
+            if (filteredSongs.length > 0) {
+                let randomSong = filteredSongs[Math.floor(Math.random() * filteredSongs.length)];
+                document.getElementById('song-result').innerHTML = `
+                    <h2>Your Perfect Karaoke Song:</h2>
+                    <p><b>${randomSong.Artist}</b> - <i>${randomSong.Title}</i></p>
+                `;
+            } else {
+                // Fallback message if no songs are found
+                document.getElementById('song-result').innerHTML = `
+                    <p>No songs found for your mood. Try again!</p>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching or processing the CSV file:', error);
+            document.getElementById('song-result').innerHTML = `
+                <p>Oops! Something went wrong. Please try again later.</p>
+            `;
         });
+});
     </script>
 
     <div class="container">
