@@ -1,72 +1,70 @@
 const selectSongBtn = document.getElementById('select-song-btn');
 const songResult = document.getElementById('song-result');
+const genreBtns = document.querySelectorAll('.genre-btn');
 const data = [];
 
-function parseCSVRow(row) {
-  const result = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < row.length; i++) {
-    const ch = row[i];
-    if (ch === '"') {
-      if (inQuotes && row[i+1] === '"') { current += '"'; i++; }
-      else { inQuotes = !inQuotes; }
-    } else if (ch === ',' && !inQuotes) {
-      result.push(current); current = '';
-    } else { current += ch; }
-  }
-  result.push(current);
-  return result;
-}
-
+// Function to select a random song and display it
 function selectSong() {
-  const activeBtn = document.querySelector('.genre-btn.active');
-  const selectedType = activeBtn ? activeBtn.getAttribute('data-type') : '';
+  const selectedType = document.querySelector('.genre-btn.active').textContent;
 
   let filteredData = data;
-  if (selectedType !== '' && selectedType !== null) {
-    filteredData = data.filter((song) => song.Type === selectedType);
+
+  if (selectedType !== 'All') {
+    filteredData = data.filter((song) => song.Type.includes(selectedType));
   }
 
-  if (filteredData.length === 0) return;
+  const randomIndex = Math.floor(Math.random() * filteredData.length);
+  const randomSong = filteredData[randomIndex];
 
-  const randomSong = filteredData[Math.floor(Math.random() * filteredData.length)];
   songResult.innerHTML = `You should sing: <b>${randomSong.Artist}</b> by <i><b>${randomSong.Title}</b></i>`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Load the CSV file and store the data
   fetch('data.csv')
     .then((response) => response.text())
     .then((csv) => {
       const rows = csv.trim().split('\n');
+
       for (let i = 1; i < rows.length; i++) {
-        const cols = parseCSVRow(rows[i]);
-        if (cols.length >= 3) {
-          data.push({
-            Artist: cols[0].trim(),
-            Title:  cols[1].trim(),
-            Type:   cols[cols.length - 1].trim(),
-          });
-        }
+        const row = rows[i].match(/(".*?"|[^,]+)(?=,|$)/g).map(s => s.replace(/^"|"$/g, ''));
+        data.push({
+          Artist: row[0],
+          Title: row[1],
+          Type: row[2],
+        });
       }
+
+      // Call selectSong() to display a random song on page load
       selectSong();
     });
 
+  // Get the genre buttons and the "SING!" button
   const genreBtns = document.querySelectorAll('.genre-btn');
   const singBtn = document.getElementById('sing-btn');
 
+  // Add click event listeners to genre buttons
   genreBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      genreBtns.forEach((b) => b.classList.remove('active'));
+      // Remove active class from all buttons
+      genreBtns.forEach((btn) => btn.classList.remove('active'));
+
+      // Add active class to the clicked button
       btn.classList.add('active');
-      if (singBtn) {
-        const pos = singBtn.getBoundingClientRect().top;
-        const scroll = window.pageYOffset || document.documentElement.scrollTop;
-        window.scrollTo({ top: scroll + pos - 35, behavior: 'smooth' });
-      }
+
+      // Scroll to the "SING!" button
+      const singBtnPosition = singBtn.getBoundingClientRect().top;
+      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      const targetScrollPosition = currentScrollPosition + singBtnPosition - 35;
+      window.scrollTo({
+        top: targetScrollPosition,
+        behavior: 'smooth',
+      });
+
       selectSong();
     });
   });
 
-  if (selectSongBtn) selectSongBtn.addEventListener('click', selectSong);
+  // Click the "SING!" button to select a random song
+  selectSongBtn.addEventListener('click', selectSong);
 });
