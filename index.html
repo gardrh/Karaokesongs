@@ -128,47 +128,49 @@
 <ul id="type-count"></ul>
 
 	<script>
-		function parseCSVRow(row) {
-			const result = [];
-			let current = '';
-			let inQuotes = false;
-			for (let i = 0; i < row.length; i++) {
-				const ch = row[i];
-				if (ch === '"') {
-					if (inQuotes && row[i+1] === '"') { current += '"'; i++; }
-					else { inQuotes = !inQuotes; }
-				} else if (ch === ',' && !inQuotes) {
-					result.push(current); current = '';
-				} else { current += ch; }
+		// Fetch the data from data.csv
+fetch('data.csv')
+	.then(response => response.text())
+	.then(data => {
+		// Split the data into rows
+		const rows = data.trim().split('\n');
+
+		// Initialize an object to store the count for each type
+		const typeCount = {};
+
+		// Loop through each row and count the occurrences of each type
+		for (let i = 1; i < rows.length; i++) {
+			const cols = rows[i].split(',');
+			const type = cols[cols.length - 1].trim();
+
+			if (type in typeCount) {
+				typeCount[type]++;
+			} else {
+				typeCount[type] = 1;
 			}
-			result.push(current);
-			return result;
 		}
 
-		fetch('data.csv')
-		.then(response => response.text())
-		.then(data => {
-			const rows = data.trim().split('\n');
-			const typeCount = {};
+		// Create an array of objects from the type count object
+		const typeCountArray = [];
+		for (let type in typeCount) {
+			typeCountArray.push({type: type, count: typeCount[type]});
+		}
 
-			for (let i = 1; i < rows.length; i++) {
-				const cols = parseCSVRow(rows[i]);
-				const type = cols[2].trim();
-				typeCount[type] = (typeCount[type] || 0) + 1;
-			}
+		// Sort the array by count in descending order
+		typeCountArray.sort((a, b) => b.count - a.count);
 
-			const typeCountArray = Object.entries(typeCount)
-				.map(([type, count]) => ({type, count}))
-				.sort((a, b) => b.count - a.count);
+		// Loop through the sorted array and add the results to the HTML
+		const typeCountList = document.getElementById('type-count');
+		for (let i = 0; i < typeCountArray.length; i++) {
+			const type = typeCountArray[i].type;
+			const count = typeCountArray[i].count;
+			const listItem = document.createElement('li');
+			listItem.textContent = `${type}: ${count}`;
+			typeCountList.appendChild(listItem);
+		}
+	})
+	.catch(error => console.error(error));
 
-			const typeCountList = document.getElementById('type-count');
-			typeCountArray.forEach(({type, count}) => {
-				const listItem = document.createElement('li');
-				listItem.textContent = `${type}: ${count}`;
-				typeCountList.appendChild(listItem);
-			});
-		})
-		.catch(error => console.error(error));
 	</script>
 		
 
