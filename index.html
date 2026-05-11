@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SingPin! — Let your next karaoke song find you!</title>
+  <title>SingPin! Let your next karaoke song find you!</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="This is a website that helps you find out what song you should sing at the next karaoke night (or morning)! Let your next karaoke song find you, and have fun! Sing karaoke today!">
+  <meta name="google-adsense-account" content="ca-pub-9252708748504526">
+  <link rel="canonical" href="https://singpin.app/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="canonical" href="https://singpin.app/">
-  <meta name="description" content="SingPin! helps you pick your next karaoke song. Filter by mood, hit SING!, and let the night begin!">
-
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e6fadd47-27cb-480f-b321-9b739264b209" type="text/javascript" async></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252708748504526" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-9252708748504526">
-
-  <script>
-    (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:3591001,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWRV1ZH9BE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZWRV1ZH9BE');
-  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cookie-consent.css">
+  <script src="cookie-consent.js"></script>
 </head>
 
 <header>
-  <img src="dinh.svg" alt="SingPin! logo">
+  <img src="dinh.svg" alt="Logo with the name SingPin!">
 </header>
 
 <div class="container">
@@ -45,103 +25,103 @@
       <li><a href="moodmatcher.html">MoodMatcher</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
     </ul>
   </nav>
 </div>
 
 <body>
   <div class="container">
-    <h1>🎤 What karaoke song should you sing?</h1>
-    <p style="text-align:center; font-size:17px;">Pick a vibe, hit SING!, and own the stage.</p>
-
+    <h1>What karaoke song should you sing?</h1>
+    <p>SingPin! is the best karaoke song picker in the world!</p>
+    <h2>Select a type of song and click SING!</h2>
     <div class="btn-group">
       <button class="genre-btn active" data-type="">All</button>
-      <button class="genre-btn" data-type="Happy!">😄 Happy!</button>
-      <button class="genre-btn" data-type="Ballad!">💙 Ballad!</button>
-      <button class="genre-btn" data-type="Banger!">🔥 Banger!</button>
-      <button class="genre-btn" data-type="Rock!">🤘 Rock!</button>
-      <button class="genre-btn" data-type="Duet!">👫 Duet!</button>
-      <button class="genre-btn" data-type="Soulful!">✨ Soulful!</button>
+      <button class="genre-btn" data-type="Happy!">Happy!</button>
+      <button class="genre-btn" data-type="Ballad!">Ballad!</button>
+      <button class="genre-btn" data-type="Banger!">Banger!</button>
+      <button class="genre-btn" data-type="Rock!">Rock!</button>
+      <button class="genre-btn" data-type="Duet!">Duet!</button>
+      <button class="genre-btn" data-type="Soulful!">Soulful!</button>
     </div>
-
-    <button id="sing-btn" id2="select-song-btn" class="select-btn" onclick="selectSong()">🎵 SING!</button>
-
-    <div id="song-result" aria-live="assertive" aria-label="Selected song"></div>
-
-    <h3>Keep pressing until you find YOUR song!</h3>
+    <button id="sing-btn" class="select-btn" onclick="selectSong()">SING!</button>
+    <div class="container">
+      <div id="song-result" aria-live="assertive"></div>
+    </div>
+    <h3>Press "SING" again until you find YOUR SONG!</h3>
   </div>
 
   <div class="container">
-    <h2>What is SingPin?</h2>
-    <p>Stop singing the same song every time. SingPin! pushes you to discover new karaoke gems — or finally commit to that banger you've been avoiding. If you're feeling wild, press SING! three times and commit to whatever comes up.</p>
-
-    <h2>💬 Got feedback?</h2>
-    <p><a href="https://forms.gle/SVTDrPQV7XYmHnbW6" target="_blank" rel="noopener noreferrer">Send us your thoughts here →</a></p>
-
-    <h2>Songs in the database</h2>
-    <p id="result" style="text-align:center;">Loading...</p>
-
-    <h2>Songs by type</h2>
+    <h2>What is this website?</h2>
+    <p>It can often be difficult to choose which karaoke song you should sing. This website exists to help you or inspire you to not sing the same song you always do. If you feel crazy, click the green sing button three times and sing whichever song appears!</p>
+    <h2>FEEDBACK!</h2>
+    <p><a aria-label="Feedback form" href="https://forms.gle/SVTDrPQV7XYmHnbW6" target="_blank" rel="noopener noreferrer">We welcome feedback through this form!</a></p>
+    <h2>How many songs are in the database?</h2>
+    <p id="result">Loading...</p>
+    <h2>How many songs of each type?</h2>
     <ul id="type-count"></ul>
   </div>
 
   <div class="container">
-    <h2>Find us</h2>
+    <h2>Social media</h2>
     <p>
-      <a aria-label="SingPin on Instagram" href="https://www.instagram.com/singpin.app/" target="_blank">
-        <img src="2959748_instagram_photo_share_icon.png" alt="Instagram">
+      <a aria-label="Link to instagram profile" href="https://www.instagram.com/singpin.app/" target="_blank">
+        <img src="2959748_instagram_photo_share_icon.png" alt="Instagram logo and link to account">
       </a>
     </p>
     <h2>Friends</h2>
     <a href="https://www.morningkaraoke.com/">
-      <img src="MK logo just text (1).svg" alt="Morning Karaoke" width="220" style="opacity:0.7;">
+      <img src="MK logo just text (1).svg" alt="Morning Karaoke Logo" width="300">
     </a>
   </div>
 
   <div class="container">
-    <p style="text-align:center; font-size:14px;">
-      <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="about.html">About</a> &nbsp;·&nbsp;
-      <a href="contact.html">Contact</a>
-    </p>
+    <h2>Information</h2>
+    <p><a aria-label="Privacy policy" href="privacy-policy.html" rel="noopener noreferrer">Privacy policy</a></p>
+    <h2>About</h2>
+    <p><a aria-label="About" href="about.html" rel="noopener noreferrer">About</a></p>
+    <p><a aria-label="Contact" href="contact.html" rel="noopener noreferrer">Contact</a></p>
   </div>
 
   <script>
-    // Song count
+    function parseCSVRow(row) {
+      const result = []; let current = ''; let inQuotes = false;
+      for (let i = 0; i < row.length; i++) {
+        const ch = row[i];
+        if (ch === '"') { inQuotes = !inQuotes; }
+        else if (ch === ',' && !inQuotes) { result.push(current.trim()); current = ''; }
+        else { current += ch; }
+      }
+      result.push(current.trim());
+      return result;
+    }
+
     fetch('data.csv')
       .then(r => r.text())
       .then(csv => {
         const rows = csv.trim().split('\n');
-        document.getElementById('result').innerHTML =
-          `There are <strong style="color:var(--neon-green)">${rows.length - 1}</strong> songs in the database!`;
-
+        document.getElementById('result').innerHTML = 'There are ' + (rows.length - 1) + ' songs in the database!';
         const typeCount = {};
         for (let i = 1; i < rows.length; i++) {
-          const cols = rows[i].split(',');
-          if (cols.length >= 3) {
-            const type = cols[2].trim();
-            typeCount[type] = (typeCount[type] || 0) + 1;
-          }
+          const cols = parseCSVRow(rows[i]);
+          const type = cols[cols.length - 1].trim();
+          typeCount[type] = (typeCount[type] || 0) + 1;
         }
-
         const sorted = Object.entries(typeCount).sort((a, b) => b[1] - a[1]);
         const list = document.getElementById('type-count');
         sorted.forEach(([type, count]) => {
           const li = document.createElement('li');
-          li.textContent = `${type} ${count}`;
+          li.textContent = type + ': ' + count;
           list.appendChild(li);
         });
       })
-      .catch(() => {
-        document.getElementById('result').textContent = 'Could not load data.';
-      });
+      .catch(err => console.error(err));
   </script>
 
   <script src="script.js"></script>
 </body>
 
 <footer>
-  <img src="dinh.svg" alt="SingPin! logo">
+  <img src="dinh.svg" alt="Logo with the name SingPin!">
 </footer>
 </html>
