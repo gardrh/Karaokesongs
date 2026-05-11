@@ -1,67 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SingPin! MoodMatcher — Find your perfect karaoke song</title>
+  <title>SingPin! MoodMatcher</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Answer 5 questions and SingPin! MoodMatcher finds your perfect karaoke song.">
+  <meta name="google-adsense-account" content="ca-pub-9252708748504526">
+  <link rel="canonical" href="https://singpin.app/moodmatcher.html">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="canonical" href="https://singpin.app/moodmatcher.html">
-  <meta name="description" content="Answer 5 quick questions and SingPin! MoodMatcher finds your perfect karaoke song.">
-
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e6fadd47-27cb-480f-b321-9b739264b209" type="text/javascript" async></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9252708748504526" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-9252708748504526">
-
-  <script>
-    (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:3591001,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWRV1ZH9BE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZWRV1ZH9BE');
-  </script>
-
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cookie-consent.css">
+  <script src="cookie-consent.js"></script>
   <style>
-    .mood-result {
-      text-align: center;
-      padding: 24px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      margin-top: 20px;
-      animation: fadeInUp 0.4s ease;
-    }
+    .question p { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; text-align: left; }
+    .mood-result { text-align: center; padding: 24px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); margin-top: 20px; }
     .mood-result h2 { color: var(--neon-green); margin-bottom: 12px; }
-    .mood-result .song-title { font-size: 22px; color: var(--neon-blue); font-weight: 900; }
-    .mood-result .song-artist { font-size: 18px; color: var(--text-muted); margin-top: 6px; }
-    .mood-result .song-type {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 4px 14px;
-      border-radius: 50px;
-      background: var(--neon-pink);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0.05em;
-    }
+    .mood-song-title { font-size: 22px; color: var(--neon-blue); font-weight: 900; }
+    .mood-song-artist { font-size: 18px; color: var(--text-muted); margin-top: 6px; }
+    .mood-song-type { display: inline-block; margin-top: 12px; padding: 4px 14px; border-radius: 50px; background: #c4005a; color: #fff; font-size: 13px; font-weight: 900; }
   </style>
 </head>
 
 <header>
-  <img src="dinh.svg" alt="SingPin! logo">
+  <img src="dinh.svg" alt="Logo with the name SingPin!">
 </header>
 
 <div class="container">
@@ -71,7 +33,7 @@
       <li><a href="moodmatcher.html">MoodMatcher</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy-policy.html">Privacy</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
     </ul>
   </nav>
 </div>
@@ -79,121 +41,105 @@
 <body>
   <div class="container">
     <h1>🎭 MoodMatcher</h1>
-    <p style="text-align:center;">Answer 5 questions and we'll find your perfect song.</p>
+    <p>Answer 5 questions and we'll find your perfect karaoke song.</p>
 
-    <div id="quiz-container">
-      <div class="question">
-        <p>1. How do you feel right now?</p>
-        <select name="q1" id="q1">
-          <option value="Banger!">⚡ Super energetic!</option>
-          <option value="Happy!">😊 Relaxed and happy</option>
-          <option value="Ballad!">💙 A little sentimental</option>
-          <option value="Duet!">🎶 I need a duet partner!</option>
-          <option value="Soulful!">✨ Deep and soulful</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <p>2. What's your karaoke strategy?</p>
-        <select name="q2" id="q2">
-          <option value="Banger!">🔥 Hype up the crowd!</option>
-          <option value="Ballad!">💔 Sing from the heart</option>
-          <option value="Happy!">😄 Have fun and smile</option>
-          <option value="Duet!">👫 Sing a legendary duet</option>
-          <option value="Soulful!">🎤 Show off my vocals</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <p>3. Your ideal Friday night?</p>
-        <select name="q3" id="q3">
-          <option value="Banger!">🕺 Dancing at a party</option>
-          <option value="Ballad!">🕯️ Cozy dinner with loved ones</option>
-          <option value="Happy!">🎤 Karaoke with friends!</option>
-          <option value="Duet!">💑 A romantic evening</option>
-          <option value="Soulful!">🍷 Wine and jazz</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <p>4. If you were a music genre?</p>
-        <select name="q4" id="q4">
-          <option value="Banger!">💥 Pop or EDM</option>
-          <option value="Ballad!">🎻 Classic love songs</option>
-          <option value="Happy!">🌟 Upbeat and fun</option>
-          <option value="Duet!">🎹 Iconic duets</option>
-          <option value="Soulful!">🎷 Smooth R&amp;B</option>
-        </select>
-      </div>
-
-      <div class="question">
-        <p>5. Your biggest karaoke goal?</p>
-        <select name="q5" id="q5">
-          <option value="Banger!">🕺 Get everyone dancing!</option>
-          <option value="Ballad!">😢 Make them feel something</option>
-          <option value="Happy!">😂 Spread joy and laughter</option>
-          <option value="Duet!">🎵 Harmonize perfectly</option>
-          <option value="Soulful!">🌟 Impress with my voice</option>
-        </select>
-      </div>
-
-      <button type="button" class="select-btn" id="find-song-btn">🔮 Find My Song!</button>
+    <div class="question">
+      <p>1. How do you feel right now?</p>
+      <select id="q1">
+        <option value="Banger!">⚡ Super energetic!</option>
+        <option value="Happy!">😊 Relaxed and happy</option>
+        <option value="Ballad!">💙 A little sentimental</option>
+        <option value="Duet!">🎶 I need a duet partner!</option>
+        <option value="Soulful!">✨ Deep and soulful</option>
+      </select>
+    </div>
+    <div class="question">
+      <p>2. What's your karaoke strategy?</p>
+      <select id="q2">
+        <option value="Banger!">🔥 Hype up the crowd!</option>
+        <option value="Ballad!">💔 Sing from the heart</option>
+        <option value="Happy!">😄 Have fun and smile</option>
+        <option value="Duet!">👫 Sing a legendary duet</option>
+        <option value="Soulful!">🎤 Show off my vocals</option>
+      </select>
+    </div>
+    <div class="question">
+      <p>3. Your ideal Friday night?</p>
+      <select id="q3">
+        <option value="Banger!">🕺 Dancing at a party</option>
+        <option value="Ballad!">🕯️ Cozy dinner with loved ones</option>
+        <option value="Happy!">🎤 Karaoke with friends!</option>
+        <option value="Duet!">💑 A romantic evening</option>
+        <option value="Soulful!">🍷 Wine and jazz</option>
+      </select>
+    </div>
+    <div class="question">
+      <p>4. If you were a music genre?</p>
+      <select id="q4">
+        <option value="Banger!">💥 Pop or EDM</option>
+        <option value="Ballad!">🎻 Classic love songs</option>
+        <option value="Happy!">🌟 Upbeat and fun</option>
+        <option value="Duet!">🎹 Iconic duets</option>
+        <option value="Soulful!">🎷 Smooth R&B</option>
+      </select>
+    </div>
+    <div class="question">
+      <p>5. Your biggest karaoke goal?</p>
+      <select id="q5">
+        <option value="Banger!">🕺 Get everyone dancing!</option>
+        <option value="Ballad!">😢 Make them feel something</option>
+        <option value="Happy!">😂 Spread joy and laughter</option>
+        <option value="Duet!">🎵 Harmonize perfectly</option>
+        <option value="Soulful!">🌟 Impress with my voice</option>
+      </select>
     </div>
 
+    <button type="button" class="select-btn" id="find-song-btn">🔮 Find My Song!</button>
     <div id="song-result"></div>
   </div>
 
   <div class="container">
-    <p style="text-align:center; font-size:14px;">
-      <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="about.html">About</a> &nbsp;·&nbsp;
-      <a href="contact.html">Contact</a>
-    </p>
+    <h2>Information</h2>
+    <p><a href="privacy-policy.html">Privacy policy</a></p>
+    <p><a href="about.html">About</a></p>
+    <p><a href="contact.html">Contact</a></p>
   </div>
 
   <script>
-    document.getElementById('find-song-btn').addEventListener('click', function () {
-      const scores = { "Banger!": 0, "Happy!": 0, "Ballad!": 0, "Duet!": 0, "Soulful!": 0 };
-
-      for (let i = 1; i <= 5; i++) {
-        const val = document.getElementById('q' + i).value;
-        if (val) scores[val]++;
+    function parseCSVRow(row) {
+      const result = []; let current = ''; let inQuotes = false;
+      for (let i = 0; i < row.length; i++) {
+        const ch = row[i];
+        if (ch === '"') { inQuotes = !inQuotes; }
+        else if (ch === ',' && !inQuotes) { result.push(current.trim()); current = ''; }
+        else { current += ch; }
       }
+      result.push(current.trim());
+      return result;
+    }
 
-      const highestGenre = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+    document.getElementById('find-song-btn').addEventListener('click', function() {
+      const scores = { 'Banger!': 0, 'Happy!': 0, 'Ballad!': 0, 'Duet!': 0, 'Soulful!': 0 };
+      for (let i = 1; i <= 5; i++) scores[document.getElementById('q' + i).value]++;
+      const genre = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
 
-      fetch('data.csv')
-        .then(r => r.text())
-        .then(csv => {
-          const rows = csv.trim().split('\n');
-          const filtered = [];
-
-          for (let i = 1; i < rows.length; i++) {
-            const cols = rows[i].split(',');
-            if (cols.length >= 3 && cols[2].trim() === highestGenre) {
-              filtered.push({ Title: cols[0].trim(), Artist: cols[1].trim(), Type: cols[2].trim() });
-            }
+      fetch('data.csv').then(r => r.text()).then(csv => {
+        const rows = csv.trim().split('\n');
+        const filtered = [];
+        for (let i = 1; i < rows.length; i++) {
+          const cols = parseCSVRow(rows[i]);
+          if (cols[cols.length - 1].trim() === genre) {
+            filtered.push({ Title: cols[0].trim(), Artist: cols[1].trim(), Type: cols[cols.length-1].trim() });
           }
-
-          const resultEl = document.getElementById('song-result');
-
-          if (filtered.length > 0) {
-            const song = filtered[Math.floor(Math.random() * filtered.length)];
-            resultEl.innerHTML = `
-              <div class="mood-result">
-                <h2>🎤 Your Perfect Song:</h2>
-                <div class="song-title">${song.Title}</div>
-                <div class="song-artist">by ${song.Artist}</div>
-                <span class="song-type">${song.Type}</span>
-              </div>
-            `;
-          } else {
-            resultEl.innerHTML = `<div class="mood-result"><p>No songs found for your mood. Try again!</p></div>`;
-          }
-        })
-        .catch(() => {
-          document.getElementById('song-result').innerHTML = `<div class="mood-result"><p>Oops! Something went wrong. Please try again.</p></div>`;
-        });
+        }
+        const el = document.getElementById('song-result');
+        if (filtered.length > 0) {
+          const song = filtered[Math.floor(Math.random() * filtered.length)];
+          el.innerHTML = '<div class="mood-result"><h2>🎤 Your Perfect Song:</h2><div class="mood-song-title">' + song.Title + '</div><div class="mood-song-artist">by ' + song.Artist + '</div><span class="mood-song-type">' + song.Type + '</span></div>';
+        } else {
+          el.innerHTML = '<div class="mood-result"><p>No songs found. Try again!</p></div>';
+        }
+      });
     });
   </script>
 
@@ -201,6 +147,6 @@
 </body>
 
 <footer>
-  <img src="dinh.svg" alt="SingPin! logo">
+  <img src="dinh.svg" alt="Logo with the name SingPin!">
 </footer>
 </html>
