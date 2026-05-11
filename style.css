@@ -202,14 +202,29 @@ a:hover { text-decoration: underline; }
 
 /* Song result */
 #song-result {
-  font-size: 18px;
-  color: var(--text);
-  min-height: 40px;
-  padding: 16px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border);
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  min-height: 60px;
+  padding: 24px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(196,0,90,0.25) 0%, rgba(0,212,255,0.15) 100%);
+  border: 2px solid rgba(196,0,90,0.6);
   line-height: 1.5;
+  box-shadow: 0 0 30px rgba(196,0,90,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+#song-result b {
+  color: var(--neon-blue);
+  font-size: 28px;
+  text-shadow: 0 0 20px rgba(0,212,255,0.6);
+}
+
+#song-result i b {
+  color: var(--neon-green);
+  font-size: 26px;
+  text-shadow: 0 0 20px rgba(0,255,136,0.6);
 }
 
 /* Stats */
